@@ -38,6 +38,7 @@ $(document).ready(function() {
     $('.age_insert').text(getAge("1990/11/22"));
     $('.year').text(new Date().getFullYear());
     setTimeout(function() {
+    	$('.counter').css('opacity',1);
         $('.counter').counterUp({
             delay: 10,
             time: 4000

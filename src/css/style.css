@@ -334,6 +334,34 @@ section:first-child {
     color: #222
 }
 
+#counters{
+    text-align: center;
+}
+
+.counter{opacity: 0;}
+
+#counters span{
+    font-weight: 700;
+    font-size: 30px;
+}
+
+#counters p{
+    position: relative;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#counters p:before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #000;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+}
+
 .container {
     position: relative;
     width: 100%;

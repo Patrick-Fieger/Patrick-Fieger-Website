@@ -10,12 +10,6 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     // configure jshint to validate js files -----------------------------------
-    jshint: {
-      options: {
-        reporter: require('jshint-stylish')
-      },
-      all: ['Grunfile.js', 'src/**/*.js']
-    },
 
     // configure uglify to minify js files -------------------------------------
     uglify: {
@@ -48,7 +42,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: 'src/**/*.js',
-        tasks: ['jshint', 'uglify']
+        tasks: ['uglify']
       }
     }
 
@@ -57,7 +51,6 @@ module.exports = function(grunt) {
   // ===========================================================================
   // LOAD GRUNT PLUGINS ========================================================
   // ===========================================================================
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -65,6 +58,7 @@ module.exports = function(grunt) {
   // ===========================================================================
   // CREATE TASKS ==============================================================
   // ===========================================================================
-  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['uglify', 'cssmin']);
+  grunt.registerTask('css', ['cssmin']);
 
 };
